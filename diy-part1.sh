@@ -10,9 +10,6 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 # =================================================================
 
-# 执行命令来切换内核
-# sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/rockchip/Makefile
-
 # 添加软件源
 # （注1：有的软件源，在编译的时后，会出现“警告”。例如：WARNING: Makefile 'package/feeds/haibo/linkease/Makefile' has a dependency on 'ffmpeg-remux', which does not exist）
 # （注2：软件源，填的多，编译出来的文件也会变大）
