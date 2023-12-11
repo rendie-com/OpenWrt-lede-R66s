@@ -13,10 +13,10 @@ rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
 
 # 调整 Docker 到 服务 菜单
-sed -i 's/"admin"/"admin", "services"/g' feeds/luci/applications/luci-app-docker/luasrc/controller/*.lua
-sed -i 's/"admin"/"admin", "services"/g; s/admin\//admin\/services\//g' feeds/luci/applications/luci-app-docker/luasrc/model/cbi/docker/*.lua
-sed -i 's/admin\//admin\/services\//g' feeds/luci/applications/luci-app-docker/luasrc/view/docker/*.htm
-sed -i 's|admin\\|admin\\/services\\|g' feeds/luci/applications/luci-app-docker/luasrc/view/docker/container.htm
+sed -i 's/"admin"/"admin", "services"/g' feeds/luci/applications/luci-app-dockerman/luasrc/controller/*.lua
+sed -i 's/"admin"/"admin", "services"/g; s/admin\//admin\/services\//g' feeds/luci/applications/luci-app-dockerman/luasrc/model/cbi/dockerman/*.lua
+sed -i 's/admin\//admin\/services\//g' feeds/luci/applications/luci-app-dockerman/luasrc/view/dockerman/*.htm
+sed -i 's|admin\\|admin\\/services\\|g' feeds/luci/applications/luci-app-dockerman/luasrc/view/dockerman/container.htm
 
 # TTYD 自动登录
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
