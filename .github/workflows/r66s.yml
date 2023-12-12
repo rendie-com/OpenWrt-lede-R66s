@@ -32,7 +32,7 @@ jobs:
 
     steps:
     - name: 准备完成
-      uses: actions/checkout@main
+      uses: aaa@bbb
 
     - name: 初始化系统环境
       env:
@@ -95,7 +95,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH connection to Actions
-      uses: P3TERX/ssh2actions@v1.0.0
+      uses: aa@xxx
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -187,7 +187,7 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 上传固件目录
-      uses: actions/upload-artifact@main
+      uses: aaa@bbb
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
@@ -220,7 +220,7 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
     
     - name: 自动发布固件到 Releases
-      uses: softprops/action-gh-release@v1
+      uses: xxx@bbb
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
@@ -231,13 +231,13 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
 
     - name: 删除运行记录
-      uses: Mattraks/delete-workflow-runs@v2
+      uses: aaa@bbb
       with:
         retain_days: 5     #保留最后多少记录不删除
         keep_minimum_runs: 0
 
     - name: 删除自动发布的旧固件
-      uses: dev-drprasad/delete-older-releases@v0.2.1
+      uses: aaa@bbb
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 2        #保留多少个releases不删除
