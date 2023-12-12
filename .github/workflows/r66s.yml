@@ -32,7 +32,7 @@ jobs:
 
     steps:
     - name: 准备完成
-      uses: aaa@bbb
+      uses: actions/checkout@main
 
     - name: 初始化系统环境
       env:
