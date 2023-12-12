@@ -187,7 +187,7 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 上传固件目录
-      uses: aaa@bbb
+      uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
@@ -220,7 +220,7 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
     
     - name: 自动发布固件到 Releases
-      uses: xxx@bbb
+      uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
@@ -231,13 +231,13 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
 
     - name: 删除运行记录
-      uses: aaa@bbb
+      uses: Mattraks/delete-workflow-runs@v2
       with:
         retain_days: 5     #保留最后多少记录不删除
         keep_minimum_runs: 0
 
     - name: 删除自动发布的旧固件
-      uses: aaa@bbb
+      uses: dev-drprasad/delete-older-releases@v0.2.1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 2        #保留多少个releases不删除
