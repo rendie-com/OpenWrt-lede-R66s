@@ -18,9 +18,10 @@ CONFIG_PACKAGE_luci-app-usb-printer=y # USB 打印服务器
 CONFIG_PACKAGE_luci-app-ttyd=y #TTYD 终端
 CONFIG_PACKAGE_luci-app-dockerman=y # docker 
 
-CONFIG_PACKAGE_luci-app-docker=y # docker  加上这个有docker CE (待验证-确认是dockerman更新，还是真的是这样子)
-CONFIG_PACKAGE_fdisk=y # 不加在拉取镜像报错：code:200 open /opt/tmp/GetImageBlob2552820923: no such file or directory (待验证)
-CONFIG_PACKAGE_cfdisk=y # 不加在拉取镜像报错：code:200 open /opt/tmp/GetImageBlob2552820923: no such file or directory (待验证)
+# 下面的docker有问题，拉取镜像报错：code:200 open /opt/tmp/GetImageBlob2552820923: no such file or directory
+# CONFIG_PACKAGE_luci-app-docker=y # docker  加上这个有docker CE (待验证-确认是dockerman更新，还是真的是这样子)
+# CONFIG_PACKAGE_fdisk=y # 不加在拉取镜像报错：code:200 open /opt/tmp/GetImageBlob2552820923: no such file or directory (待验证)
+# CONFIG_PACKAGE_cfdisk=y # 不加在拉取镜像报错：code:200 open /opt/tmp/GetImageBlob2552820923: no such file or directory (待验证)
 
 # 官方文档，看不懂 https://openwrt.org/zh/start     
 # 注：在做注释的时候，会报错，不知道原因，所以单独创建这个文件来做注释。
