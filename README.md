@@ -6,3 +6,5 @@
 插件对应参考列表：https://www.right.com.cn/forum/thread-344825-1-1.html
 
 R66s参考：https://github.com/haiibo/OpenWrt
+
+docker CE：docker run -d --restart=always --name="portainer" -p 9999:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
