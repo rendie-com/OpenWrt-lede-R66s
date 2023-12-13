@@ -5,4 +5,4 @@
 
 插件对应参考列表：https://www.right.com.cn/forum/thread-344825-1-1.html
 
-R66s参考:https://github.com/haiibo/OpenWrt
+R66s参考：https://github.com/haiibo/OpenWrt
