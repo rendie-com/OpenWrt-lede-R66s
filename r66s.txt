@@ -3,7 +3,7 @@ CONFIG_TARGET_rockchip_armv8=y # 编译图形界面中的【选项二】
 CONFIG_TARGET_rockchip_armv8_DEVICE_fastrhino_r66s=y # 编译图形界面中的【选项三】
 
 CONFIG_TARGET_KERNEL_PARTSIZE=64 # 挂载点 目录【/overlay】(注：不能用运算符，报错为：:warning: symbol value '1024*5' invalid for TARGET_ROOTFS_PARTSIZE)
-CONFIG_TARGET_ROOTFS_PARTSIZE=960 # 挂载点 目录【/mnt/mmcblk0p1】（注：不能填太大，超过约7G，会提示空间不足，无法编译）
+CONFIG_TARGET_ROOTFS_PARTSIZE=960 # 挂载点 目录【/mnt/mmcblk0p1】（注：不能填太大，超过约7G，会提示空间不足，无法编译,而且文件大小也变大，总之，能填小就填小。）
 CONFIG_LIBMBEDTLS_HAVE_ARMV8CE_AES=y # 未知 必选
 CONFIG_HAS_TESTING_KERNEL=y # 未知（具有测试内核） 必选
 CONFIG_TESTING_KERNEL=y # 未知（测试内核） 必选
