@@ -13,19 +13,12 @@ on:
   # schedule:
   #   - cron: 0 17 1,15 * *
 
-env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
-  FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: r66s.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+env:  
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
   TZ: Asia/Shanghai
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -59,7 +52,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone https://github.com/coolsnowwolf/lede -b master openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 更新时区、编译时间
@@ -75,10 +68,10 @@ jobs:
 
     - name: 加载自定义源码
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
+        [ -e feeds.conf.default ] && mv feeds.conf.default openwrt/feeds.conf.default
+        chmod +x diy-part1.sh
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        $GITHUB_WORKSPACE/diy-part1.sh
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -89,10 +82,10 @@ jobs:
     - name: 加载自定义配置
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
+        [ -e r66s.config ] && mv r66s.config openwrt/.config
+        chmod +x diy-part2.sh
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+        $GITHUB_WORKSPACE/diy-part2.sh
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
