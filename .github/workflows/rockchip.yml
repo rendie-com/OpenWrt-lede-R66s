@@ -1,4 +1,4 @@
-name: 编译OpenWrt-lede固件-rockchip
+name: 编译OpenWrt-lede固件-rockchip--测式失败
 
 on:
   repository_dispatch:
