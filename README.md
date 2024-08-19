@@ -9,5 +9,5 @@ R66s参考：https://github.com/haiibo/OpenWrt
 
 portainer 容器：docker run -d --restart=always --name="portainer" -p 9999:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
 
-问：为什么是lede的项目，而不是openwrt官方源码？
+问：为什么是lede的源码，而不是openwrt官方源码？
 答：因为这个型号的驱动没被官方收入，而lede有这个驱动。
