@@ -13,5 +13,5 @@ portainer 容器：docker run -d --restart=always --name="portainer" -p 9999:900
 答：因为这个型号的驱动没被官方收入，而lede有这个驱动。
 
 openwrt官网 https://github.com/openwrt/openwrt?tab=readme-ov-file
-
+lede源码 : https://github.com/coolsnowwolf/lede
 如果编译不成功，说明“lede”改动了配置，就需要进图形界面选择配置了。
