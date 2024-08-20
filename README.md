@@ -16,6 +16,6 @@ openwrt官网 https://github.com/openwrt/openwrt
 
 lede源码 : https://github.com/coolsnowwolf/lede
 
-如果编译不成功，说明“lede”改动了配置，就需要进图形界面选择配置了。
+如果编译不成功，说明“lede”改动了配置，就需要进图形界面选择配置了(已Fork过来，这个问题已解决)。
 
 什么都没装，免的有的网址打不开而编译失败。
