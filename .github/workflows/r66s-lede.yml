@@ -1,4 +1,4 @@
-name: 编译OpenWrt-lede固件-远程下载leke源码
+name: 编译OpenWrt-lede固件-远程下载lede源码
 
 on:
   repository_dispatch:
