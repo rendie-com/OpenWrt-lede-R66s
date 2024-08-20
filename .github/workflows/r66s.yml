@@ -147,10 +147,6 @@ jobs:
         
         ⏰ 编译时间：${{ env.FILE_TIME1 }}
         
-        🎈 内核版本：${{ env.KERNEL_TESTING_PATCHVER }} （实测：6.1.66）
-        
-        🎉 编译版本：${{ env.DISTRIB_REVISION }}
-        
         🖥 管理地址：192.168.100.1 
         
         🌴 名称：root
