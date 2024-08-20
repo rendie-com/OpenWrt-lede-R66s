@@ -94,22 +94,6 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         
-    - name: 输出编译信息
-      run: |
-        cd openwrt
-        echo " 系统空间      类型   总数  已用  可用 使用率"
-        df -hT $PWD
-        
-        echo
-        echo "=========================================="
-        echo
-
-        ZZZ="package/lean/default-settings/files/zzz-default-settings"
-        echo "DISTRIB_REVISION=$(cat $ZZZ|grep DISTRIB_REVISION= | sed 's/^.\{24\}//g' | sed 's/.\{26\}$//')" >> $GITHUB_ENV
-        echo "KERNEL_TESTING_PATCHVER=$(cat target/linux/rockchip/Makefile|grep KERNEL_TESTING_PATCHVER | sed 's/^.\{25\}//g')" >> $GITHUB_ENV
-        echo "	    当前编译版本：$(cat $ZZZ|grep DISTRIB_REVISION= | sed 's/^.\{24\}//g' | sed 's/.\{26\}$//')"
-        echo "	    内核版本：$(cat target/linux/rockchip/Makefile|grep KERNEL_TESTING_PATCHVER | sed 's/^.\{25\}//g')"
-
     - name: 下载固件包
       id: package
       run: |
@@ -140,15 +124,6 @@ jobs:
         du -h --max-depth=1 openwrt/ --exclude=build_dir --exclude=bin
         du -h --max-depth=1 openwrt/build_dir
         du -h --max-depth=1 openwrt/bin
-
-    # - name: 整理固件文件
-      # id: organize
-      # if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
-      # run: |
-        # cd openwrt/bin/targets/*/*
-        # rm -rf packages
-        # echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        # echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 上传固件目录
       uses: actions/upload-artifact@main
