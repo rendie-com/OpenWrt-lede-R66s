@@ -170,14 +170,14 @@ jobs:
         du -h --max-depth=1 openwrt/build_dir
         du -h --max-depth=1 openwrt/bin
 
-    - name: 整理固件文件
-      id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
-      run: |
-        cd openwrt/bin/targets/*/*
-        rm -rf packages
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        echo "status=success" >> $GITHUB_OUTPUT
+    # - name: 整理固件文件
+      # id: organize
+      # if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      # run: |
+        # cd openwrt/bin/targets/*/*
+        # rm -rf packages
+        # echo "FIRMWARE=$PWD" >> $GITHUB_ENV
+        # echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 上传固件目录
       uses: actions/upload-artifact@main
