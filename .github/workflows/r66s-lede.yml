@@ -7,7 +7,7 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: 'false'
+        default: 'true'
         
 # 定时触发编译(每月1,16日早1点，北京时间-8小时)
 #  schedule:
@@ -51,7 +51,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone https://github.com/rendie-com/lede -b master openwrt
+        git clone https://github.com/coolsnowwolf/lede -b master openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 更新时区、编译时间
