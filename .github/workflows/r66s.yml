@@ -189,15 +189,3 @@ jobs:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
-
-    - name: 删除自动发布的旧固件
-      uses: dev-drprasad/delete-older-releases@v0.3.4
-      with:
-        repo: <owner>/<repoName> # defaults to current repo
-        keep_latest: 3
-        keep_min_download_counts: 1 # Optional parameters
-        delete_expired_data: 10 # Optional parameters
-        delete_tag_pattern: beta # defaults to ""
-      env:
-        GITHUB_TOKEN: ${{ secrets.GIT_USER_TOKEN }}
-        
