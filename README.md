@@ -18,4 +18,4 @@ lede源码 : https://github.com/coolsnowwolf/lede
 
 什么都没装，免的有的网址打不开而编译失败。
 
-注：我找不到r66s 6.6的版本。
+注：我找不到r66s 6.6的版本。-------(找到了，从这里下载： https://github.com/rendie-com/flippy-openwrt-actions/releases/tag/OpenWrt_lede_save_2024.08)
