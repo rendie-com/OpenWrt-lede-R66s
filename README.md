@@ -18,4 +18,4 @@ lede源码 : https://github.com/coolsnowwolf/lede
 
 什么都没装，免的有的网址打不开而编译失败。
 
-注：可能是openwrt官方更新的代码太大，我找不到"r66s“ 6.1以上的版本。
+注：我找不到"r66s“ 6.1以上的版本。
