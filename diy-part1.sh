@@ -2,7 +2,7 @@
 # 添加软件源
 # （注1：有的软件源，在编译的时后，会出现“警告”。例如：WARNING: Makefile 'package/feeds/haibo/linkease/Makefile' has a dependency on 'ffmpeg-remux', which does not exist）
 # （注2：软件源，填的多，编译出来的文件也会变大）
-echo 'src-git passwall https://github.com/rendie-com/openwrt-passwall' >>feeds.conf.default
-echo 'src-git passwall_packages https://github.com/rendie-com/openwrt-passwall-packages.git;main' >> "feeds.conf.default"
+# echo 'src-git passwall https://github.com/rendie-com/openwrt-passwall' >>feeds.conf.default
+# echo 'src-git passwall_packages https://github.com/rendie-com/openwrt-passwall-packages.git;main' >> "feeds.conf.default"
 
 # git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
