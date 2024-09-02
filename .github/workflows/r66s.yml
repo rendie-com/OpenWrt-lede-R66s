@@ -51,7 +51,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone https://github.com/rendie-com/lede -b master openwrt
+        git clone https://github.com/coolsnowwolf/lede -b master openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 更新时区、编译时间
