@@ -10,7 +10,6 @@ env:
   REPO_BRANCH: master
   EXTRA_CONFIG: configs/extra.config
   CONFIG_FILE: configs/rockchip.config
-  DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
