@@ -5,10 +5,7 @@
 
 R66s参考：https://github.com/haiibo/OpenWrt
 
-portainer 容器：docker run -d --restart=always --name="portainer" -p 9999:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
-
-问：为什么是lede的源码，而不是openwrt官方源码？
-答：因为这个型号的驱动没被官方收入，而lede有这个驱动。
+问：为什么是lede的源码，而不是openwrt官方源码？答：因为这个型号的驱动没被官方收入，而lede有这个驱动。
 
 openwrt官网 https://github.com/openwrt/openwrt
 
@@ -18,6 +15,6 @@ lede源码 : https://github.com/coolsnowwolf/lede
 
 什么都没装，免的有的网址打不开而编译失败。
 
-注：我找不到r66s 6.6的版本。-------(找到了，从这里下载： https://github.com/rendie-com/flippy-openwrt-actions/releases/tag/OpenWrt_lede_save_2024.08 缺点是别人提前编译好的，安全性得不到保证。)
+r66s 6.6的版本，从这里下载： https://github.com/rendie-com/flippy-openwrt-actions/releases/tag/OpenWrt_lede_save_2024.08 缺点是别人提前编译好的，安全性得不到保证。
 
 2024.09.02  找到一个6.6版的,可以在线编译Lede源码。          https://github.com/oppen321/Lede-OpenWrt  （IP是：192.168.100.1）                     
