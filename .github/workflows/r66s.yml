@@ -1,4 +1,4 @@
-name: 编译OpenWrt-lede源码
+name: 编译OpenWrt-lede源码 - 已弃用
 
 on:
   repository_dispatch:
