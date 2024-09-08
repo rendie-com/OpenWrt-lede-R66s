@@ -13,6 +13,4 @@ lede源码 : https://github.com/coolsnowwolf/lede
 
 如果编译不成功，说明“lede”改动了配置，就需要进图形界面选择配置了。------(这个问题已解决，已Fork过来，缺点是不会随着“lede”版本的更新而更新。)
 
-什么都没装，免的有的网址打不开而编译失败。
-
 2024.09.02  找到一个6.6版的,可以在线编译Lede源码。          https://github.com/oppen321/Lede-OpenWrt  （IP是：192.168.100.1）                     
